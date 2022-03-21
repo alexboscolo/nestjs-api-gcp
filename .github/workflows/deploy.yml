@@ -27,6 +27,5 @@ jobs:
         project_id: '${{ secrets.gcp_project_id }}'
         entry_point: api
         region: '${{ secrets.gcp_function_region }}'
-        vpc_connector: '${{ secrets.gcp_vcp_connector }}'
     - name: Setting Permission
       run: gcloud alpha functions add-iam-policy-binding '${{ secrets.gcp_function_name}}' --region='${{ secrets.gcp_function_region }}' --member=allUsers --role=roles/cloudfunctions.invoker
